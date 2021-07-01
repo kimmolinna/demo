@@ -1,0 +1,5 @@
+ out←hdr json_data data;nl
+ out←hdr{¯1↓∊⍺{'"',⍺,'":',({80=⎕dr ⍵:'"',⍵,'"'⋄⍕⍵}⍵),','}¨⍵}¨data
+ out←¯1↓∊{'{',⍵,'},'}¨out
+ out←'{"values":','[',out,']','}'
+ ⍝ KSL 1.01
