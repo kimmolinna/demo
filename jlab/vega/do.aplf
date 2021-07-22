@@ -1,0 +1,18 @@
+out←in do data;x;y
+(x y)←in
+out←'{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",'
+out,←'"description": "A vertical box plot showing median, min, and max block hours.",'
+out,←'"width": 800,'
+out,←'"height": 400,'
+out,←'"data": ',data,','
+out,←'"mark": {"type": "boxplot","extent": "min-max"},'
+out,←'"encoding": {'
+out,←'"x": {"field": "',x,'", "type": "nominal"},'
+out,←'"color": {"field": "',x,'", "type": "nominal", "legend": null},'
+out,←'"y": {'
+out,←'"field": "',y,'",'
+out,←'"type": "quantitative",'
+out,←'"scale": {"zero": true}},'
+out,←'"size": {"value": 90}}'
+out,←'}'
+⍝ KSL 1.01

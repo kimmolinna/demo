@@ -1,0 +1,32 @@
+bp←{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A vertical box plot showing median, min, and max block hours.",
+    "width": 800,
+    "height": 400,
+    "data": "[data]",
+    "mark": {
+        "type": "boxplot",
+        "extent": "min-max"
+    },
+    "encoding": {
+        "x": {
+            "field": "[x]",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "[x]",
+            "type": "nominal",
+            "legend": null
+        },
+        "y": {
+            "field": "[y]",
+            "type": "quantitative",
+            "scale": {
+                "zero": true
+            }
+        },
+        "size": {
+            "value": 90
+        }
+    }
+}

@@ -1,0 +1,13 @@
+ md_out←{in}table data;hdr;o;nl;or;c
+ hdr←data[1;]
+ data←1 0↓data
+ c←≢hdr
+ o←c⍴⊂'-:'
+ :if 0≠⎕nc 'in'
+   or←(':-' '-:' ':-:' '--')['lrc'⍳in]
+   o←c↑or,o
+ :endif
+ nl←⎕UCS 13
+ md_out←nl,⍨'|',∊{(⍕⍵),'|'}¨hdr
+ md_out,←nl,⍨'|',∊{⍵,'|'}¨o
+ md_out,←∊{nl,⍨'|',∊⍵}¨↓{(⍕⍵),'|'}¨data

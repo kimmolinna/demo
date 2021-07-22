@@ -1,5 +1,8 @@
- out←hdr json_data data;nl
+ out←json_data robj;nl;hdr;data
+ hdr←robj.attributes[⊂'names']
+ data←↓⍉↑robj.data
  out←hdr{¯1↓∊⍺{'"',⍺,'":',({80=⎕dr ⍵:'"',⍵,'"'⋄⍕⍵}⍵),','}¨⍵}¨data
  out←¯1↓∊{'{',⍵,'},'}¨out
  out←'{"values":','[',out,']','}'
- ⍝ KSL 1.01
+
+ ⍝ KSL 1.02
